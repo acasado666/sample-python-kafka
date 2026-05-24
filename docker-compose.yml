@@ -1,0 +1,6 @@
+services:
+  kafka:
+    image: apache/kafka-native:latest
+    container_name: kafka_python
+    ports:
+      - "9092:9092"
