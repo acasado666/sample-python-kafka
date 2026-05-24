@@ -3,16 +3,7 @@ from config import CONSUMER_CONFIG, TOPIC_NAME
 
 import json
 
-
-# consumer_config = {
-#     "bootstrap.servers": "localhost:9092",
-#     "group.id": "orders-consumer-group",
-#     "auto.offset.reset": "earliest",
-# }
-
 consumer = Consumer(CONSUMER_CONFIG)
-
-# topic = "orders"
 consumer.subscribe([TOPIC_NAME])
 
 print("Waiting for messages...")
