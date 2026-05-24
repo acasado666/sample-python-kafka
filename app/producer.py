@@ -3,13 +3,7 @@ from config import PRODUCER_CONFIG, TOPIC_NAME
 import json
 import time
 
-
-# producer_config = {
-#     "bootstrap.servers": "localhost:9092",
-# }
-
 producer = Producer(PRODUCER_CONFIG)
-
 
 def delivery_report(err, msg):
     if err is not None:
@@ -20,9 +14,6 @@ def delivery_report(err, msg):
             f"partition={msg.partition()} "
             f"offset={msg.offset()}"
         )
-
-
-# topic = "orders"
 
 for i in range(10):
     order = {
