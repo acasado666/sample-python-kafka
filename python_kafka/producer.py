@@ -4,9 +4,14 @@ import uuid
 import random
 
 from confluent_kafka import Producer
-from config import PRODUCER_CONFIG, TOPIC_NAME
+# from config import PRODUCER_CONFIG, TOPIC_NAME
 
-producer = Producer(PRODUCER_CONFIG)
+# producer = Producer(PRODUCER_CONFIG)
+producer_config = {
+    'bootstrap.servers': 'localhost:9092'
+}
+
+producer = Producer(producer_config)
 
 def delivery_report(err, msg):
     if err is not None:

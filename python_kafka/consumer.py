@@ -4,9 +4,18 @@ from confluent_kafka import Consumer
 from config import CONSUMER_CONFIG, TOPIC_NAME
 
 
-consumer = Consumer(CONSUMER_CONFIG)
+# consumer = Consumer(CONSUMER_CONFIG)
+#
+# consumer.subscribe([TOPIC_NAME])
+consumer_config = {
+    'bootstrap.servers': 'localhost:9092',
+    'group.id': 'order-tracker',
+    'auto.offset.reset': 'earliest'
+}
 
-consumer.subscribe([TOPIC_NAME])
+consumer = Consumer(consumer_config)
+
+consumer.subscribe(['orders'])
 
 print("🟢 Consumer is running and subscribed to orders topic")
 

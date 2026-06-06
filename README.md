@@ -23,8 +23,10 @@ Before running this project, ensure you have:
 
 Install the required Python packages:
 
+At this time pip3 version is  26.1.2
+
 ```bash
-pip install confluent-kafka
+pip3 install confluent-kafka
 ```
 
 ### 2. Start Kafka
@@ -43,7 +45,7 @@ To verify Kafka is running:
 docker ps
 ```
 
-You should see the `kafka_python` container running.
+You should see the `kafka1` container running.
 
 ## Project Structure
 
